@@ -1,4 +1,14 @@
-Oui, dans une architecture bien structurée de type MVC (Modèle-Vue-Contrôleur), la classe DAO (Data Access Object) est responsable de la gestion de la connexion à la base de données et de l'exécution des opérations CRUD (Créer, Lire, Mettre à jour, Supprimer). Le DAO abstrait les détails de l'accès aux données d'une base de données ou d'un autre mécanisme de persistance, fournissant une interface simple à utiliser pour le reste de l'application.
+liste des choses pour TP PGM WEB app Animaux
+Par priorite
+-s'assurer que tout fonctionne ensemble
+-Ajouter classe Service
+-Ajouter Panier (imprimer pdf)
+-ajouter description, age, quantite? voir avec Panier
+--Header Footer
+-Classe Produits 
+Oui, dans une architecture bien structurée de type MVC (Modèle-Vue-Contrôleur), la classe DAO (Data Access Object) est responsable de la gestion
+de la connexion à la base de données et de l'exécution des opérations CRUD (Créer, Lire, Mettre à jour, Supprimer). Le DAO abstrait les détails
+de l'accès aux données d'une base de données ou d'un autre mécanisme de persistance, fournissant une interface simple à utiliser pour le reste de l'application.
 
 Voici une explication plus détaillée des rôles et des interactions au sein d'une architecture MVC, en se concentrant particulièrement sur l'interaction des servlets avec les classes DAO et de service :
 
@@ -10,7 +20,7 @@ Opérations CRUD : Le DAO fournit des méthodes pour effectuer des opérations C
 Gestion des transactions : En fonction de la complexité des opérations, le DAO peut également gérer la gestion des transactions, en s'assurant que toutes les opérations d'une transaction sont terminées avec succès ou annulées en cas d'échec.
 
 Rôle de la couche de service
-Logique métier : La couche de service contient la logique métier de l'application. Elle utilise le DAO pour interagir avec la base de données mais se concentre sur l'application des règles et des workflows métier aux données.
+Logique métier : La couche de service contient la logique métier de l'application. Elle utilise le DAO pour interagir avec la base de données mais se concentre sur l'application des règles et des workflows métier aux données. (ici on va gerer la saisie utilisateur, c.a.d s'il entre des informations inadatptés il faut configurer des messages a renvoyer a son interface. Exemple : "cet animal n'est plus en stock" , ou " vous ne pouvez pas acheter plus de 3 animaux a la fois" ) 
 
 Transformation des données : La couche de service peut transformer les données entre les formats utilisés par le DAO et les modèles utilisés par le reste de l'application. Cela peut impliquer la conversion des enregistrements bruts de la base de données en objets de domaine ou l'agrégation de données provenant de multiples sources.
 
