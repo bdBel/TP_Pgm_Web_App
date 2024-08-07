@@ -3,9 +3,14 @@
 <html>
 <head>
     <title>Cartes avec animaux</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket Counter</title>
+    <!-- Include Font Awesome for the icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <style>
         body {
+
             padding: 20px; /* Adds padding around the entire page content */
             background-color: #f6f7f8; /* Light grey background for a soft contrast */
         }
@@ -44,8 +49,8 @@
 
             h5 {
                 text-align: center;
-                background-color: #e9ecef; /* Lighter background color for the button */
-                padding: 12px 20px; /* Increased padding for a bigger button area */
+                background-color: #e9ecef; /* Lighter background color for the btnAnimal */
+                padding: 12px 20px; /* Increased padding for a bigger btnAnimal area */
                 cursor: pointer;
             }
     </style>
@@ -53,6 +58,16 @@
 
 </head>
 <body>
+<div id="basketCounterContainer">
+    <span>PANIER </span>
+    <i class="fas fa-shopping-cart"></i>
+    <span id="basketCounter">0</span>
+</div>
+
+<%--<btnAnimal id = "incrementbtnAnimal">Add to Basket</btnAnimal>--%>
+<br>
+<br>
+
 <div id="dogCardsContainer">
     <!-- Static Card Template -->
    <%-- <div class="card">
@@ -70,8 +85,12 @@
             <p class="descript-dest"><c:out value="${animal.nom}"/>
                 (<c:out value="${animal.sexe}"/>) <br>
                 </bf> Prix: <c:out value="${animal.prixAnimal}"/></p>
-            <h5>Ajouter au panier</h5>
-        </div>
+<%--                <form action="control/panier" method="post">--%>
+                    <!-- Input fields for animal details go here -->
+               <button class="btnAnimal" type="button" name="BUY_ANIMALS">Buy Animals</button>
+<%--                 <input type="submit" class="btnAnimal" value="Buy Animals" name="BUY_ANIMALS">--%>
+<%--                </form>--%>
+         </div>
         <%--<div class="card mb-3 p-2">
             <img class="chiens box"  src="../images/labradorR.jpeg" alt="presentation 2" style="height:300px; ">
             <h4>Labrador Golden</h4>
@@ -80,6 +99,22 @@
 
     </c:forEach>
     <!-- End Dynamically Generated Cards -->
+    <script type="text/javascript">
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var btnAnimals = document.getElementsByClassName('btnAnimal'); // Single variable for clarity
+            var counterSpan = document.getElementById('basketCounter');
+
+            // Iterate over each button in the collection
+            for(var i = 0; i < btnAnimals.length; i++) {
+                var btn = btnAnimals[i];
+                btn.addEventListener('click', function() { // Attach event listener to each button individually
+                    var currentCount = parseInt(counterSpan.textContent);
+                    counterSpan.textContent = currentCount + 1; // Increment the counter
+                });
+            }
+        });
+    </script>
 </div>
 </body>
 </html>

@@ -5,7 +5,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.ProduitAnimal;
 import model.TypeAnimal;
 
 import java.io.IOException;
@@ -25,11 +24,14 @@ public class AfficherAnimalServlet extends HttpServlet {
         //appeler les méthodes dans cette classe (afficher détail, ajouter au panier etc..)
         //
         String jdbcURL = "jdbc:mariadb://mysql-bil.alwaysdata.net:3306/bil_animaux";
+
         String jdbcUsername = "bil_bel";
+
         String jdbcPassword = "cricket123456**";
 
         List<TypeAnimal> listeAnimaux = new ArrayList<>();
         try {
+
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
             Statement statement = connection.createStatement();
