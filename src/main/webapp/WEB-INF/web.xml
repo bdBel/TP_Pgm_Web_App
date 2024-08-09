@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
-         version="5.0">
+<web-app version="5.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd">
 
     <servlet>
         <servlet-name>AfficherAnimalServlet</servlet-name>
         <servlet-class>control.AfficherAnimalServlet</servlet-class>
     </servlet>
+    <servlet>
+    <servlet-name>Panier</servlet-name>
+    <servlet-class>control.Panier</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>AfficherAnimalServlet</servlet-name>
-        <url-pattern>/control/AfficherAnimalServlet</url-pattern>
+        <url-pattern>AfficherAnimalServlet</url-pattern>
     </servlet-mapping>
+
+
+<servlet-mapping>
+<servlet-name>Panier</servlet-name>
+<url-pattern>Panier</url-pattern>
+</servlet-mapping>
+
+<!--    <servlet>-->
+<!--        <servlet-name>AjouterAnimalServlet</servlet-name>-->
+<!--        <servlet-class>control.AjouterAnimalServlet</servlet-name>-->
+<!--        </servlet-class>-->
+<!--    </servlet>-->
+
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>AjouterAnimalServlet</servlet-name>-->
+<!--        <url-pattern>/AjouterAnimalServlet</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+
+
+
+    <welcome-file-list>
+        <welcome-file>acceuil.html</welcome-file>
+    </welcome-file-list>
     <jsp-config>
         <taglib>
             <taglib-uri>http://java.sun.com/jsp/jstl/core</taglib-uri>
@@ -22,5 +48,4 @@
             <taglib-location>/WEB-INF/tld/fmt.tld</taglib-location>
         </taglib>
     </jsp-config>
-
 </web-app>
